@@ -1,0 +1,22 @@
+<div class="row animate__animated animate__flipInY">
+  <div class="col-md-5 mx-auto">
+    <div class="card">
+      <div class="text-center card-header bg-dark text-white">
+        <b class="h2 ">Edit post</b>
+      </div>
+      <div class="card-body">
+        <form action="/update/<%= @post.id %>" method="post">
+          <input type="hidden" name="_method" id="_method" value="patch">
+
+          <div class="form-group">
+            <input id="" class="form-control" type="text" name="content" value="<%= @post.content %>">
+          </div>
+          <div class="form-group ">
+            <button type="submit" class="btn btn-block btn-warning">Update</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

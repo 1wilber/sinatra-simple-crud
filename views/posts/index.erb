@@ -1,0 +1,30 @@
+<section class="jumbotron p-4">
+  <h2 class="display-4 text-center">My Posts</h2>
+</section>
+
+<form action="/create" method="post" class="animate__animated animate__bounce form-inline my-4">
+  <input class="form-control" type="text" name="content" placeholder="Write here">
+  <button class="btn btn-primary" type="submit">Create</button>
+</form>
+
+
+<div class="row animate__animated animate__lightSpeedInRight">
+<% @posts.each do |post| %>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+          <p class="card-text"><%= post.content %></p>
+      </div>
+      <div class="card-footer">
+        <form action="/delete/<%= post.id %>" method="post" class="d-inline">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+
+        <a href="/edit/<%= post.id %>" class="btn btn-warning ">Edit</a>
+
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

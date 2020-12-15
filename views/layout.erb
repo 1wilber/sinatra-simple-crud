@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <title>Sinatra CRUD</title>
+  </head>
+  <body>
+
+   <% if flash[:success]%>
+    <div id="flash" class="alert alert-success">
+      <%= flash[:success] %>
+    </div>
+    <%elsif flash[:error]%>
+    <div id="flash" class="alert alert-danger">
+      <%= flash[:error] %>
+    </div>
+    <% end %>
+
+    <div class="container p-5">
+      <%= yield %>
+    </div>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
